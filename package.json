@@ -22,14 +22,14 @@
     "packages/*"
   ],
   "nohoist": [
-"/react-native",
-"/react-native/",
-"/@react-native/",
-"/expo",
-"/expo/",
-"/whatwg-fetch",
-"/@react-native/virtualized-lists",
-"/react",
-"/react-dom"
-]  
+    "/react-native",
+    "/react-native/",
+    "/@react-native/",
+    "/expo",
+    "/expo/",
+    "/whatwg-fetch",
+    "/@react-native/virtualized-lists",
+    "/react",
+    "/react-dom"
+  ]
 }
