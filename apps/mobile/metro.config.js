@@ -18,4 +18,7 @@ config.resolver.nodeModulesPaths = [
 // 3. Force Metro to resolve (sub)dependencies only from the `nodeModulesPaths`
 config.resolver.disableHierarchicalLookup = true;
 
+// ignore the backend folder completely
+config.resolver.blockList = [/apps\/backend\/.*/, /apps\\backend\\.*/];
+
 module.exports = config;
