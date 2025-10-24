@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Article } from "@/types";
+import { fetchArticles } from "shared";
 
 export const Route = createFileRoute("/articles")({
   loader: async () => {
-    const res = await fetch("http://localhost:1337/api/articles");
-    const data = await res.json();
-    return { articles: data.data } satisfies { articles: Article[] };
+    const articles = await fetchArticles();
+    return { articles: articles } satisfies { articles: Article[] };
   },
   component: ArticlesPage,
 });

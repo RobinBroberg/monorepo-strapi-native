@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FlatList, View, Text, Image } from "react-native";
+import { fetchArticles } from "shared";
 
 type Article = {
   id: number;
@@ -11,14 +12,10 @@ type Article = {
 export default function Hopme() {
   const [articles, setArticles] = useState<Article[]>([]);
 
-  async function load() {
-    const res = await fetch("http://localhost:1337/api/articles");
-    const data = await res.json();
-    setArticles(Array.isArray(data.data) ? data.data : []);
-  }
-
   useEffect(() => {
-    load();
+    fetchArticles()
+      .then(setArticles)
+      .catch((err) => console.error("Error loading articles:", err));
   }, []);
 
   //Det verkar inte finnas nån block renderer för react native
