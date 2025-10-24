@@ -17,19 +17,24 @@
     "node": ">=18"
   },
   "packageManager": "yarn@1.22.22",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "nohoist": [
-    "/react-native",
-    "/react-native/",
-    "/@react-native/",
-    "/expo",
-    "/expo/",
-    "/whatwg-fetch",
-    "/@react-native/virtualized-lists",
-    "/react",
-    "/react-dom"
-  ]
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": [
+      "apps/backend/**",
+      "apps/backend",
+      "apps/backend/react",
+      "apps/backend/react-dom",
+      "*/react-native",
+      "*/@react-native/**",
+      "*/expo",
+      "*/whatwg-fetch"
+    ]
+  },
+  "resolutions": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  }
 }
